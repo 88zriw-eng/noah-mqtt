@@ -37,7 +37,6 @@ func NewGrowattAppService(options Options) *GrowattAppService {
 		lastGenerationTotal: make(map[string]float64),
 	}
 }
-
 func (g *GrowattAppService) Login() error {
 
 func (g *GrowattAppService) Login() error {
