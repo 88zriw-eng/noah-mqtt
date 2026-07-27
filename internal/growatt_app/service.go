@@ -28,13 +28,17 @@ type GrowattAppService struct {
 	lastGenerationTotal map[string]float64
 }
 
-func NewGrowattAppService(options Options) *GrowattAppService {return &GrowattAppService{
-	opts:     options,
-	client:   newClient(options.ServerUrl, options.Username, options.Password),
-	loggedIn: false,
+func NewGrowattAppService(options Options) *GrowattAppService {
+	return &GrowattAppService{
+		opts:     options,
+		client:   newClient(options.ServerUrl, options.Username, options.Password),
+		loggedIn: false,
 
-	lastGenerationTotal: make(map[string]float64),
+		lastGenerationTotal: make(map[string]float64),
+	}
 }
+
+func (g *GrowattAppService) Login() error {
 
 func (g *GrowattAppService) Login() error {
 	slog.Info("logging in to growatt (app)...")
