@@ -29,14 +29,14 @@ dockers:
       - --platform=linux/arm64/v8
       - --label=org.opencontainers.image.title={{ .ProjectName }}
       - --label=org.opencontainers.image.description={{ .ProjectName }}
-      - --label=org.opencontainers.image.url=https://github.com/mtrossbach/{{ .ProjectName }}
-      - --label=org.opencontainers.image.source=https://github.com/mtrossbach/{{ .ProjectName }}
+      - --label=org.opencontainers.image.url=https://github.com/88zriw-eng/{{ .ProjectName }}
+      - --label=org.opencontainers.image.source=https://github.com/88zriw-eng/{{ .ProjectName }}
       - --label=org.opencontainers.image.version={{ .Version }}
       - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
       - --label=org.opencontainers.image.licenses=Apache-2.0
     image_templates:
-      - &arm64v8_image "ghcr.io/mtrossbach/{{ .ProjectName }}:{{ .Version }}-arm64v8"
+      - &arm64v8_image "ghcr.io/88zriw-eng/{{ .ProjectName }}:{{ .Version }}-arm64v8"
     extra_files:
       - LICENSE
       - passwd
@@ -49,14 +49,14 @@ dockers:
       - --platform=linux/arm/v6
       - --label=org.opencontainers.image.title={{ .ProjectName }}
       - --label=org.opencontainers.image.description={{ .ProjectName }}
-      - --label=org.opencontainers.image.url=https://github.com/mtrossbach/{{ .ProjectName }}
-      - --label=org.opencontainers.image.source=https://github.com/mtrossbach/{{ .ProjectName }}
+      - --label=org.opencontainers.image.url=https://github.com/88zriw-eng/{{ .ProjectName }}
+      - --label=org.opencontainers.image.source=https://github.com/88zriw-eng/{{ .ProjectName }}
       - --label=org.opencontainers.image.version={{ .Version }}
       - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
       - --label=org.opencontainers.image.licenses=Apache-2.0
     image_templates:
-      - &armv6_image "ghcr.io/mtrossbach/{{ .ProjectName }}:{{ .Version }}-armv6"
+      - &armv6_image "ghcr.io/88zriw-eng/{{ .ProjectName }}:{{ .Version }}-armv6"
     extra_files:
       - LICENSE
       - passwd
@@ -68,25 +68,25 @@ dockers:
       - --platform=linux/amd64
       - --label=org.opencontainers.image.title={{ .ProjectName }}
       - --label=org.opencontainers.image.description={{ .ProjectName }}
-      - --label=org.opencontainers.image.url=https://github.com/mtrossbach/{{ .ProjectName }}
-      - --label=org.opencontainers.image.source=https://github.com/mtrossbach/{{ .ProjectName }}
+      - --label=org.opencontainers.image.url=https://github.com/88zriw-eng/{{ .ProjectName }}
+      - --label=org.opencontainers.image.source=https://github.com/88zriw-eng/{{ .ProjectName }}
       - --label=org.opencontainers.image.version={{ .Version }}
       - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
       - --label=org.opencontainers.image.revision={{ .FullCommit }}
       - --label=org.opencontainers.image.licenses=Apache-2.0
     image_templates:
-      - &amd64_image "ghcr.io/mtrossbach/{{ .ProjectName }}:{{ .Version }}-amd64"
+      - &amd64_image "ghcr.io/88zriw-eng/{{ .ProjectName }}:{{ .Version }}-amd64"
     extra_files:
       - LICENSE
       - passwd
     dockerfile: Dockerfile_goreleaser
 docker_manifests:
-  - name_template: "ghcr.io/mtrossbach/{{ .ProjectName }}:{{ .Version }}"
+  - name_template: "ghcr.io/88zriw-eng/{{ .ProjectName }}:{{ .Version }}"
     image_templates:
       - *arm64v8_image
       - *armv6_image
       - *amd64_image
-  - name_template: "ghcr.io/mtrossbach/{{ .ProjectName }}:latest"
+  - name_template: "ghcr.io/88zriw-eng/{{ .ProjectName }}:latest"
     image_templates:
       - *arm64v8_image
       - *armv6_image
@@ -94,6 +94,6 @@ docker_manifests:
     
 release:
   github:
-    owner: mtrossbach
+    owner: 88zriw-eng
     name: noah-mqtt
   draft: false
