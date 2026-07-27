@@ -24,6 +24,8 @@ type GrowattAppService struct {
 	devices   []models.NoahDevicePayload
 	endpoints []endpoint.Endpoint
 	loggedIn  bool
+
+	lastGenerationTotal map[string]float64
 }
 
 func NewGrowattAppService(options Options) *GrowattAppService {
