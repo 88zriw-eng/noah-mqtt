@@ -17,6 +17,14 @@ func (g *GrowattAppService) pollStatus(device models.NoahDevicePayload) {
 
 		last := g.lastGenerationTotal[device.Serial]
 
+		// DEBUG: Eingehenden Gesamtenergie-Wert protokollieren
+		slog.Warn(
+			"DEBUG GenerationTotal",
+			slog.String("device", device.Serial),
+			slog.Float64("received", payload.GenerationTotalEnergy),
+			slog.Float64("last", last),
+		)
+
 		// Ungültige oder zurückspringende Gesamtenergie ignorieren
 		if last > 0 {
 			if payload.GenerationTotalEnergy <= 0 {
